@@ -27,11 +27,11 @@ jobs:
               run: echo "Test"
 
             - name: Build Docker image
-              run: docker build -t devops_projekt-ghcr .
+              run: docker build -t devops_14657-ghcr .
 
             - name: Run Trivy scan
               run: |
-                  docker run --rm -v /var/run/docker.sock:/var/run/docker.sock aquasec/trivy:latest image devops_projekt-ghcr
+                  docker run --rm -v /var/run/docker.sock:/var/run/docker.sock aquasec/trivy:latest image devops_14657-ghcr
 
             - name: Push to GitHub Container Registry
               if: github.event_name == 'push'
