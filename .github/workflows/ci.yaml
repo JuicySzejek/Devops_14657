@@ -28,7 +28,7 @@ jobs:
 
             - name: Build Docker image
               run: docker build -t devops_projekt-ghcr .
-              
+
             - name: Run Trivy scan
               run: |
                   docker run --rm -v /var/run/docker.sock:/var/run/docker.sock aquasec/trivy:latest image devops_projekt-ghcr
@@ -37,5 +37,5 @@ jobs:
               if: github.event_name == 'push'
               run: |
                   docker login --username juicyszejek --password ${{ secrets.GH_PAT }} ghcr.io
-                  docker build . --tag ghcr.io/juicyszejek/devops_projekt-ghcr:latest
-                  docker push ghcr.io/juicyszejek/devops_projekt-ghcr:latest
+                  docker build . --tag ghcr.io/juicyszejek/devops_14657-ghcr:latest
+                  docker push ghcr.io/juicyszejek/devops_14657-ghcr:latest
