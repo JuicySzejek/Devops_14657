@@ -27,7 +27,7 @@ jobs:
               run: echo "Test"
 
             - name: Build Docker image
-              run: docker build -t devops_projekt-ghcr .
+              run: docker build -t devops_14657-ghcr .
 
             - name: Run Trivy scan
               run: |
